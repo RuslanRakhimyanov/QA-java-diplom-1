@@ -5,13 +5,12 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
-import praktikum.Bun;
 
 @RunWith(Parameterized.class)
 public class BunTest {
     private final String name;
     private final float price;
-    private Bun bun;
+    Bun bun;
 
     public BunTest(String name, float price) {
         this.name = name;
@@ -22,10 +21,11 @@ public class BunTest {
     public static Object[][] dataForTest() {
         return new Object[][]{
                 {"Флюоресцентная булка R2-D3", 988},
-                {"Краторная булка N-200i", 1255},
-                {"Булочка с кунжутом", 0},
+                {"Краторная булка N-200i", 0},
                 {"Стандартная", -1},
-                {"Бриошь", 0.1f},
+                {"black bun", 100f},
+                {"white bun", 200f},
+                {"red bun", 300f},
         };
     }
     @Before

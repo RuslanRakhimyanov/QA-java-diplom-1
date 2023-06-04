@@ -8,15 +8,11 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
 
-import praktikum.Bun;
-import praktikum.Burger;
-import praktikum.Ingredient;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import static praktikum.IngredientType.FILLING;
+import static ru.yandex.praktikum.IngredientType.FILLING;
 
 @RunWith(MockitoJUnitRunner.class)
 public class BurgerTest {
@@ -26,7 +22,6 @@ public class BurgerTest {
     private Ingredient IngredientOptional;
     @Mock
     private Bun bun;
-
     private Burger burger;
 
     @Before

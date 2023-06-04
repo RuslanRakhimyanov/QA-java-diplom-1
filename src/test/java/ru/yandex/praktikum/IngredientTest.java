@@ -5,10 +5,8 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
-import praktikum.Ingredient;
-import praktikum.IngredientType;
 
-import static praktikum.IngredientType.*;
+import static ru.yandex.praktikum.IngredientType.*;
 
 @RunWith(Parameterized.class)
 public class IngredientTest {
@@ -27,20 +25,19 @@ public class IngredientTest {
     public static Object[][] getParameters() {
         return new Object[][]{
                 {SAUCE, "Соус Spicy-X", 90f},
-                {SAUCE, "Соус фирменный Space Sauce", 80f},
-                {SAUCE, "Соус традиционный галактический", 15f},
-                {SAUCE, "Соус с шипами Антарианского плоскоходца", 88f},
-                {SAUCE, "Сырный соус", 25f},
-                {FILLING, "Мясо бессмертных моллюсков Protostomia", 1337f},
+                {SAUCE, "Соус фирменный Space Sauce", 80,1f},
+                {SAUCE, "Соус традиционный галактический", -15f},
+                {SAUCE, "Соус с шипами Антарианского плоскоходца", 0f},
+                {SAUCE, "null", 1},
+                {SAUCE, null, 1337f},
+                {null, "Сырный соус", 25f},
                 {FILLING, "Говяжий метеорит (отбивная)", 3000f},
-                {FILLING, "Биокотлета из марсианской Магнолии", 424f},
-                {FILLING, "Филе Люминесцентного тетраодонтимформа", 988f},
-                {FILLING, "Хрустящие минеральные кольца", 300f},
-                {FILLING, "Плоды Фалленианского дерева", 874f},
-                {FILLING, "Кристаллы марсианских альфа-сахаридов", 762f},
-                {FILLING, "Мини-салат Экзо-Плантаго", 4400f},
-                {FILLING, "Сыр с астероидной плесенью", 4142f},
-                {FILLING, "chicken cutlet", 700f},
+                {FILLING, "Биокотлета из марсианской Магнолии", -424f},
+                {FILLING, "Филе Люминесцентного тетраодонтимформа", 0f},
+                {FILLING, "Хрустящие минеральные кольца", 30.1f},
+                {FILLING, "null", 874f},
+                {FILLING, null, 762f},
+                {FILLING, "Qwerty 1234_!@#$", 4142f},
         };
     }
 
@@ -51,16 +48,14 @@ public class IngredientTest {
 
     @Test
     public void getPriceTest() {
-        float expectedPrice = price;
         float actualPrice = ingredient.getPrice();
-        Assert.assertEquals(expectedPrice, actualPrice, 0);
+        Assert.assertEquals(price, actualPrice, 0);
     }
 
     @Test
     public void getNameTest() {
-        String expectedName = name;
         String actualName = ingredient.getName();
-        Assert.assertEquals(expectedName, actualName);
+        Assert.assertEquals(name, actualName);
     }
 
     @Test
