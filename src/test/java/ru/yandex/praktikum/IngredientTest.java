@@ -25,7 +25,7 @@ public class IngredientTest {
     public static Object[][] getParameters() {
         return new Object[][]{
                 {SAUCE, "Соус Spicy-X", 90f},
-                {SAUCE, "Соус фирменный Space Sauce", 80,1f},
+                {SAUCE, "Соус фирменный Space Sauce", 80.1f},
                 {SAUCE, "Соус традиционный галактический", -15f},
                 {SAUCE, "Соус с шипами Антарианского плоскоходца", 0f},
                 {SAUCE, "null", 1},
